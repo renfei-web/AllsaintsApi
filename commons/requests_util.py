@@ -52,7 +52,7 @@ class RequestUtil():
                         # logger.info(f"响应结果{res_json}")
                         # return res_json
                     except Exception as e:
-                        logger.log("返回的结果不是json格式")
+                        logger.info("返回的结果不是json格式")
 
                     if "extract" in caseinfo_keys:
                         write_extrict_yaml(res_json)
