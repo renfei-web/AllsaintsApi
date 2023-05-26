@@ -1,6 +1,6 @@
 access_token: bdf34456-ba8b-4d11-9a40-203e36fc3a9f
 channel: '1001'
-expires_in: 26520
+expires_in: 16857
 region: CN
 scope: smsapi
 token_type: bearer
