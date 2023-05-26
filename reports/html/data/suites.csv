@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri May 26 19:23:41 CST 2023","Fri May 26 19:23:41 CST 2023","366","testcases.Test_log_in","test_gettoken","TestCmsSongApi","","","成功获取token",""
-"passed","Fri May 26 19:23:42 CST 2023","Fri May 26 19:23:42 CST 2023","217","testcases.Test_resource_manage","test_release_songsheet","TestCmsSongSheet","","","发布歌单",""
-"passed","Fri May 26 19:23:42 CST 2023","Fri May 26 19:23:42 CST 2023","214","testcases.Test_resource_manage","test_release_songsheet","TestCmsSongSheet","","","发布歌单",""
-"passed","Fri May 26 19:23:41 CST 2023","Fri May 26 19:23:42 CST 2023","253","testcases.Test_resource_manage","test_release_songsheet","TestCmsSongSheet","","","发布歌单",""
-"passed","Fri May 26 19:23:42 CST 2023","Fri May 26 19:23:42 CST 2023","152","testcases.Test_resource_manage","test_song_refresh","TestCmsSongSheet","","","同步歌曲信息",""
