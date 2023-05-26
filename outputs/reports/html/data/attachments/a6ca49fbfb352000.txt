@@ -1,0 +1,10 @@
+INFO     root:requests_util.py:30 -------------------接口测试开始-------------------
+INFO     root:requests_util.py:132 接口名称：成功发布歌单
+INFO     root:requests_util.py:133 请求方式：put
+INFO     root:requests_util.py:134 请求url：http://dev-cms.allsaints-internal.com/api/res/playlist/release?t=1684995381976
+INFO     root:requests_util.py:136 请求头：{'Authorization': 'Bearer bdf34456-ba8b-4d11-9a40-203e36fc3a9f', 'Cookie': 'd-locale=zh-CN; access_token=bdf34456-ba8b-4d11-9a40-203e36fc3a9f; refresh_token=undefined; JSESSIONID=d-locale=zh-CN; access_token=3535214f-9bce-45a4-9e5f-461fb809a83c; refresh_token=undefined; JSESSIONID=D8ABBDCE518001D6510D35E0F3273BE6', 'Content-Type': 'application/json;charset=UTF-8'}
+INFO     root:requests_util.py:140 请求参数：{'ids': ['215184']}
+INFO     root:requests_util.py:154 预期结果：[{'equals': {'status_code': 200}}, {'contains': '发布成功'}]
+INFO     root:requests_util.py:155 实际结果：{'code': 0, 'message': 'success', 'data': '发布成功'}
+INFO     root:requests_util.py:168 接口测试成功
+INFO     root:requests_util.py:169 -------------------接口测试结束-------------------
