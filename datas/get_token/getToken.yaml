@@ -1,0 +1,14 @@
+-
+  name: 获取token
+  base_url: ${read_config_yaml(base_url,test_url)}
+  request:
+    method: POST
+    url: /pms-auth/oauth/token
+    headers:
+      User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+      Cookie: d-locale=zh-CN; refresh_token=undefined; JSESSIONID=E91C3413B2C75F9763F9679A0F820185
+      Content-Type: application/x-www-form-urlencoded
+    data: grant_type=password&username=test&password=05a671c66aefea124cc08b76ea6d30bb&scope=smsapi&client_id=password&client_secret=1ef130b4-e4f8-4d30-8743-7cc09ce249d6&ttime=1676691944130
+  extract: '(.*?)'
+  validate:
+    - equals: {status_code: 200}

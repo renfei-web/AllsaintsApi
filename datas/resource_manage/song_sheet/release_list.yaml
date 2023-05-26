@@ -1,0 +1,18 @@
+-
+  name: $ddt{name}
+  base_url: ${read_config_yaml(base_url,test_url)}
+  parameterize:
+    name-ids-assert_str: \datas\resource_manage\song_sheet\release_list_data.yaml
+  request:
+    method: put
+    url: /api/res/playlist/release?t=1684995381976
+    headers:
+      Authorization: Bearer ${read_extract_yaml()}
+      Cookie: d-locale=zh-CN; access_token=${read_extract_yaml()}; refresh_token=undefined; JSESSIONID=d-locale=zh-CN; access_token=3535214f-9bce-45a4-9e5f-461fb809a83c; refresh_token=undefined; JSESSIONID=D8ABBDCE518001D6510D35E0F3273BE6
+      Content-Type: application/json;charset=UTF-8
+    json:
+      ids:
+        - $ddt{ids}
+  validate:
+    - equals: {status_code: 200}
+    - contains: $ddt{assert_str}

@@ -1,0 +1,4 @@
+#基础路径配置
+base_url:
+  test_url: http://dev-cms.allsaints-internal.com
+#  product_url: http://47.107.116.139

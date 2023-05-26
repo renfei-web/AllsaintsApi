@@ -1,0 +1,18 @@
+-
+  name: 首页歌曲,同步按钮
+  base_url: ${read_config_yaml(base_url,test_url)}
+  request:
+    method: post
+    url: /api/res/meta/refresh?t=1676630098250
+    headers:
+      Authorization: Bearer ${read_extract_yaml()}
+      Cookie: d-locale=zh-CN; access_token=${read_extract_yaml()}; refresh_token=undefined; JSESSIONID=d-locale=zh-CN; access_token=3535214f-9bce-45a4-9e5f-461fb809a83c; refresh_token=undefined; JSESSIONID=D8ABBDCE518001D6510D35E0F3273BE6
+      Content-Type: application/json;charset=UTF-8
+    json:
+      resId: 2
+      typeId: 1
+      lang: zh_CN
+      channel: 1001
+      region: CN
+  validate:
+    - equals: {status_code: 200}

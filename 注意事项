@@ -1,0 +1,19 @@
+pip install pytest_ordering  安装插件，按照标记用例顺序执行
+pip install pytest-rerunfailures  失败用例重跑插件
+pip install pytest-html           生成pytest-html报告
+
+@pytest.mark.xfail
+使用xfail标记用例预期失败，如果用例运行成功则显示Xpassed，失败则显示xfailed。xfail标记并不会影响用例的运行
+
+设置strict=True
+以确保XPASS时，测试的记录为失败
+
+结合skipif 条件，
+条件为Ture运行xfail
+
+raises参数
+可以在raises参数中指定单个异常或异常组，如果测试失败且没有提到指定的异常，那么测试将被报告为常规失败raises
+
+reason参数
+表明失败原因
+
