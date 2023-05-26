@@ -23,7 +23,7 @@ if __name__ == '__main__':
     # 命令：allure generate outputs/reports/allure -o outputs/reports/html --clean
     # 打开测试报告
     # os.system("allure serve outputs/reports/allure")
-    # 命令：allure serve outputs/reports/allure
+    # 命令：allure serve outputs/reports/allure#
 
 
 
