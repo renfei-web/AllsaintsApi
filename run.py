@@ -19,7 +19,7 @@ if __name__ == '__main__':
     time.sleep(3)
 
     # 将JSON文件转换成HTML格式的测试报告（生成JSON文件路径：outputs/reports/allure; 生成HTML报告路径：outputs/reports/html）
-    os.system("allure generate outputs/reports/allure -o outputs/reports/html --clean")
+    # os.system("allure generate outputs/reports/allure -o outputs/reports/html --clean")
     # 命令：allure generate outputs/reports/allure -o outputs/reports/html --clean
     # 打开测试报告
     # os.system("allure serve outputs/reports/allure")
