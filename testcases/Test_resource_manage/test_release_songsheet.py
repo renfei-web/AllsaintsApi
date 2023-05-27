@@ -22,7 +22,7 @@ logger = Logging().log("INFO")
 class TestCmsSongSheet:
     @allure.story("发布歌单按钮")
     @allure.title("发布歌单")
-    @pytest.mark.run(order=2)
+    @pytest.mark.resource
     @pytest.mark.parametrize("caseInfo", read_testcase_yaml("/datas/resource_manage/song_sheet/release_list.yaml"))
     def test_refresh_song(self, caseInfo):
         RequestUtil(HotFunc()).standard_yml(caseInfo)

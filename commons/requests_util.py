@@ -52,7 +52,7 @@ class RequestUtil():
                         # logger.info(f"响应结果{res_json}")
                         # return res_json
                     except Exception as e:
-                        logger.info("返回的结果不是json格式")
+                        logger.info(f"返回的结果不是json格式，返回结果: {res}")
 
                     if "extract" in caseinfo_keys:
                         write_extrict_yaml(res_json)
@@ -79,8 +79,8 @@ class RequestUtil():
             else:
                 logger.error("一级参数格式不正确，检查是否包含name,request,validate关键字")
         except Exception as e:
-            logger.error(f"规范yaml测试用例standard_yml异常：{traceback.format_exc()}")
-
+            logger.error(f"检查网络是否正常：{traceback.format_exc()}")
+            raise e
 
     def replace_value(self, data):
         if data:
@@ -172,7 +172,7 @@ class RequestUtil():
             logger.info(f"接口测试失败")
             logger.info("-------------------接口测试结束-------------------\n")
             logger.error(f"断言assert_result异常：{traceback.format_exc()}")
-
+            raise e
 
 
     # 相等断言
