@@ -10,11 +10,9 @@ import sys
 import requests
 import time
 
-# JOB_URL = sys.argv[1]
-# JOB_NAME = sys.argv[2]
+JOB_URL = sys.argv[1]
+JOB_NAME = sys.argv[2]
 
-JOB_URL = "https:www.baidu.com"
-JOB_NAME = "test"
 
 currenttime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 url = 'https://open.feishu.cn/open-apis/bot/v2/hook/8dac7896-b332-4adf-9aab-7a9acc7ff533'
