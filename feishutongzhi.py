@@ -9,18 +9,29 @@
 import sys
 import requests
 import time
+import json
 
 JOB_URL = sys.argv[1]
 JOB_NAME = sys.argv[2]
+BUILD_NUMBER = sys.argv[3]
+GIT_BRANCH= sys.argv[4]
 
+
+# JOB_URL = "test_url"
+# JOB_NAME = "test_job"
+# BUILD_NUMBER = "110"
+# GIT_BRANCH = "master"
 
 currenttime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 url = 'https://open.feishu.cn/open-apis/bot/v2/hook/8dac7896-b332-4adf-9aab-7a9acc7ff533'
 method = 'post'
 headers = {
-    'Content-Type': 'application/json'
+   'Content-Type': 'application/json',
+   'Accept': '*/*',
+   'Host': 'open.feishu.cn',
 }
-data = {
+
+payload = json.dumps({
     "msg_type": "interactive",
     "card": {
         "config": {
@@ -30,8 +41,9 @@ data = {
         "elements": [{
                 "tag": "div",
                 "text": {
-                        "content": "接口自动化测试完成", # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
-                        "tag": "dev_api_test"
+                        # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
+                    "content": "项目名称：" + JOB_NAME + "\n构建编号：第" + BUILD_NUMBER + "次构建\n运行时间：" + currenttime + "\n分支:" + GIT_BRANCH,
+                    "tag": "dev_api_test"
                 }
         }, {
                 "actions": [{
@@ -53,8 +65,12 @@ data = {
                 }
         }
     }
-}
+})
 # res = requests.request(method=method, url=url, headers=headers, json=data)
 # print(res)
 # print(res.json())
-requests.request(method=method, url=url, headers=headers, json=data)
+response = requests.request("POST", url, headers=headers, data=payload)
+print(response.text)
+
+
+
