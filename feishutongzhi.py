@@ -15,6 +15,7 @@ JOB_URL = sys.argv[1]
 JOB_NAME = sys.argv[2]
 BUILD_NUMBER = sys.argv[3]
 GIT_BRANCH = sys.argv[4]
+print(JOB_URL, JOB_NAME, BUILD_NUMBER, GIT_BRANCH)
 
 
 # JOB_URL = "test_url"
@@ -51,7 +52,7 @@ payload = json.dumps({
                                 "content": "查看测试报告", # 这是卡片的按钮，点击可以跳转到url指向的allure路径
                                 "tag": "lark_md"
                         },
-                        "url": f"{JOB_URL}/outputs/reports/html", # JOB_URL 调用python定义的变量，该url是服务器下的allure路径
+                        "url": f"{JOB_URL}/{BUILD_NUMBER}/allure", # JOB_URL 调用python定义的变量，该url是服务器下的allure路径
                         "type": "default",
                         "value": {}
                 }],
