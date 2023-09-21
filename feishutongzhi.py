@@ -10,11 +10,14 @@ import sys
 import requests
 import time
 
-JOB_URL = sys.argv[1]
-JOB_NAME = sys.argv[2]
+# JOB_URL = sys.argv[1]
+# JOB_NAME = sys.argv[2]
+
+JOB_URL = "https:www.baidu.com"
+JOB_NAME = "test"
 
 currenttime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-url = 'https://open.feishu.cn/open-apis/bot/v2/hook/b2d49e36-1650-46da-8d59-13625652d171'
+url = 'https://open.feishu.cn/open-apis/bot/v2/hook/8dac7896-b332-4adf-9aab-7a9acc7ff533'
 method = 'post'
 headers = {
     'Content-Type': 'application/json'
@@ -29,7 +32,7 @@ data = {
         "elements": [{
                 "tag": "div",
                 "text": {
-                        "content": "用例已执行完成", # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
+                        "content": "接口自动化测试完成", # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
                         "tag": "dev_api_test"
                 }
         }, {
