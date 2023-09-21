@@ -12,46 +12,47 @@ import time
 
 JOB_URL = sys.argv[1]
 JOB_NAME = sys.argv[2]
-BUILD_NUMBER = sys.argv[3]
-GIT_BRANCH = sys.argv[4]
+
 currenttime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 url = 'https://open.feishu.cn/open-apis/bot/v2/hook/b2d49e36-1650-46da-8d59-13625652d171'
 method = 'post'
 headers = {
     'Content-Type': 'application/json'
 }
-json = {
+data = {
     "msg_type": "interactive",
     "card": {
         "config": {
-            "wide_screen_mode": True,
-            "enable_forward": True
+                "wide_screen_mode": True,
+                "enable_forward": True
         },
         "elements": [{
-            "tag": "div",
-            "text": {
-                "content": "项目名称：" + JOB_NAME + "\n构建编号：第" + BUILD_NUMBER + "次构建\n运行时间：" + currenttime + "\n分支:" + GIT_BRANCH,
-                "tag": "lark_md"
-            }
-        }, {
-            "actions": [{
-                "tag": "button",
+                "tag": "div",
                 "text": {
-                    "content": "查看报告",
-                    "tag": "lark_md"
-                },
-                "url": JOB_URL,
-                "type": "default",
-                "value": {}
-            }],
-            "tag": "action"
+                        "content": "用例已执行完成", # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
+                        "tag": "dev_api_test"
+                }
+        }, {
+                "actions": [{
+                        "tag": "button",
+                        "text": {
+                                "content": "查看测试报告", # 这是卡片的按钮，点击可以跳转到url指向的allure路径
+                                "tag": "lark_md"
+                        },
+                        "url": f"{JOB_URL}/outputs/reports/html", # JOB_URL 调用python定义的变量，该url是服务器下的allure路径
+                        "type": "default",
+                        "value": {}
+                }],
+                "tag": "action"
         }],
         "header": {
-            "title": {
-                "content": JOB_NAME + " 构建报告",
-                "tag": "plain_text"
-            }
+                "title": {
+                        "content": JOB_NAME + "构建报告", # JOB_NAME 调用python定义的变量，这是卡片的标题
+                        "tag": "plain_text"
+                }
         }
     }
 }
-requests.request(method=method, url=url, headers=headers, json=json)
+res = requests.request(method=method, url=url, headers=headers, json=data)
+print(res)
+print(res.json())
