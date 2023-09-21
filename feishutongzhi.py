@@ -53,6 +53,7 @@ data = {
         }
     }
 }
-res = requests.request(method=method, url=url, headers=headers, json=data)
-print(res)
-print(res.json())
+# res = requests.request(method=method, url=url, headers=headers, json=data)
+# print(res)
+# print(res.json())
+requests.request(method=method, url=url, headers=headers, json=data)
