@@ -52,7 +52,7 @@ payload = json.dumps({
                                 "content": "查看测试报告", # 这是卡片的按钮，点击可以跳转到url指向的allure路径
                                 "tag": "lark_md"
                         },
-                        "url": f"{JOB_URL}/{BUILD_NUMBER}/allure", # JOB_URL 调用python定义的变量，该url是服务器下的allure路径
+                        "url": f"{JOB_URL}/{BUILD_NUMBER}/allure/", # JOB_URL 调用python定义的变量，该url是服务器下的allure路径
                         "type": "default",
                         "value": {}
                 }],
