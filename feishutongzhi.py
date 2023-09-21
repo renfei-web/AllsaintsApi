@@ -14,7 +14,7 @@ import json
 JOB_URL = sys.argv[1]
 JOB_NAME = sys.argv[2]
 BUILD_NUMBER = sys.argv[3]
-GIT_BRANCH= sys.argv[4]
+GIT_BRANCH = sys.argv[4]
 
 
 # JOB_URL = "test_url"
@@ -28,7 +28,6 @@ method = 'post'
 headers = {
    'Content-Type': 'application/json',
    'Accept': '*/*',
-   'Host': 'open.feishu.cn',
 }
 
 payload = json.dumps({
@@ -41,9 +40,9 @@ payload = json.dumps({
         "elements": [{
                 "tag": "div",
                 "text": {
-                        # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
+                    # 这是卡片的内容，也可以添加其他的内容：比如构建分支，构建编号等
                     "content": "项目名称：" + JOB_NAME + "\n构建编号：第" + BUILD_NUMBER + "次构建\n运行时间：" + currenttime + "\n分支:" + GIT_BRANCH,
-                    "tag": "dev_api_test"
+                    "tag": "lark_md"
                 }
         }, {
                 "actions": [{
