@@ -11,7 +11,7 @@ from commons.yaml_util import get_object_path
 
 class HotFunc():
     def read_extract_yaml(self):
-        with open(get_object_path() + "\extract.yaml", 'r', encoding="utf-8") as f:
+        with open(get_object_path() + "/extract.yaml", 'r', encoding="utf-8") as f:
             # yaml文件中读取内容
             msg = yaml.load(stream=f, Loader=yaml.FullLoader)
             return msg["access_token"]
