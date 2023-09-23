@@ -32,7 +32,7 @@ def clear_extract_yaml():
 
 # 读取用例yaml
 def read_data_yaml(yaml_path):
-    with open((get_object_path()+yaml_path).replace(r'\\', '/'), mode="r", encoding='utf-8') as f:
+    with open((os.path.normpath(get_object_path()+yaml_path)), mode="r", encoding='utf-8') as f:
         print("***************" + get_object_path() +yaml_path +"***************")
         value = yaml.load(stream=f, Loader=yaml.FullLoader)
         return value
